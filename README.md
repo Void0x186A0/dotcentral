@@ -10,6 +10,6 @@ https://dashboard.ngrok.com/get-started/your-authtoken - This is a direct link t
 
 ### 4) Create a new repository secret.  Name is: `NGROK_AUTH_TOKEN` and for the value, enter your authtoken from ngrok. Finalize with "Add Secret"
 
-### 5) Now, head to Actions, choose "VM" workflow and run it.
+### 5) Now, head to Actions, choose "Ernest" workflow and run it.
 
 ### 6) Get your IP, username, and password from the workflow.

@@ -1,7 +1,6 @@
 @echo off
 net config server /srvcomment:"Windows Server 2019" > out.txt 2>&1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /V EnableAutoTray /T REG_DWORD /D 0 /F > out.txt 2>&1
-REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /f /v Wallpaper /t REG_SZ /d D:\a\wallpaper.bat
 net user TerryDavis DotCentral@V1 /add >nul
 net localgroup administrators TerryDavis /add >nul
 net user TerryDavis /active:yes >nul

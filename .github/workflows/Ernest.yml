@@ -11,8 +11,8 @@ jobs:
     - name: 1
       run: |
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-        Invoke-WebRequest https://raw.githubusercontent.com/HighM/RDP/main/start.bat -OutFile start.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/HighM/RDP/main/loop.bat -OutFile loop.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/HighM/dotcentral/main/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/HighM/dotcentral/main/loop.bat -OutFile loop.bat
     - name: 2
       run: Expand-Archive ngrok.zip
     - name: 3

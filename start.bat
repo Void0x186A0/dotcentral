@@ -2,18 +2,17 @@
 net config server /srvcomment:"Windows Server 2019" > out.txt 2>&1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /V EnableAutoTray /T REG_DWORD /D 0 /F > out.txt 2>&1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /f /v Wallpaper /t REG_SZ /d D:\a\wallpaper.bat
-net user dotcentral DotCentral@V1 /add >nul
-net localgroup administrators dotcentral /add >nul
-net user dotcentral /active:yes >nul
+net user TerryDavis DotCentral@V1 /add >nul
+net localgroup administrators TerryDavis /add >nul
+net user TerryDavis /active:yes >nul
 net user installer /delete
 diskperf -Y >nul
 sc config Audiosrv start= auto >nul
 sc start audiosrv >nul
-ICACLS C:\Windows\Temp /grant dotcentral:F >nul
-ICACLS C:\Windows\installer /grant dotcentral:F >nul
+ICACLS C:\Windows\Temp /grant TerryDavis:F >nul
+ICACLS C:\Windows\installer /grant TerryDavis:F >nul
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 if '%errorlevel%' NEQ '0' (
-echo Looking if I have admin access?
 goto UACPrompt
 ) else ( goto Meet Admin )
 :UACPrompt
@@ -37,7 +36,7 @@ RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 echo Thank you for using dotcentral's dot-central-v1 RDP.
 echo IP:
 tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url || echo "You didn't follow my instructions, it ain't working now, you lil nigger."
-echo Username: dotcentral
+echo Username: TerryDavis
 echo Password: DotCentral@V1
 echo Login to your RDP!
 ping -n 10 127.0.0.1 >nul
